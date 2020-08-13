@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></link>
+	<h:outputStylesheet library="css" name="basico.css" />
+	<title>Desafio - ESIG</title>
+
+</h:head>
+
+<h:body>
+	<div class="col-sm-2">
+		<h:graphicImage library="img" name="esig.png" height="90" width="270" />
+	</div>
+	<div class="col-sm-5">
+		<div class="container">
+			<h:form id="formRegistro">
+
+				<br />
+				<h1>todos</h1>
+				<h:inputText value="#{registroBean.registro.descricao}"
+					styleClass="text-input">
+					<f:passThroughAttribute name="placeholder"
+						value="What needs to be done?" />
+				</h:inputText>
+				<h:commandButton value="Salvar" action="#{registroBean.salvar}"
+					styleClass="btn btn-default" />
+				<div class="tabela">
+					<h:dataTable value="#{registroBean.registros}" var="p"
+						styleClass="table">
+						<h:column>
+							<h:outputText value="#{p.descricao}" />
+						</h:column>
+						<h:column>
+							<h:commandLink value="">
+								<f:setPropertyActionListener value="#{p}"
+									target="#{registroBean.registro}" />
+								<h:graphicImage value="/resources/img/lapis.png" />
+							</h:commandLink>
+						</h:column>
+						<h:column>
+							<h:commandLink value="" action="#{registroBean.remover}">
+								<f:setPropertyActionListener value="#{p}"
+									target="#{registroBean.registro}" />
+								<h:graphicImage value="/resources/img/excluir.png" />
+							</h:commandLink>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

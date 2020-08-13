@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #d3d3d3;
+}
+h1 {
+	font-size: 90px;
+	font-family: "Lucida Console", Courier, monospace;
+	color: red;
+	opacity: 0.2;
+	margin-left: 2cm;
+}
+.text-input {
+	font-size: 20px;
+	width: 478px;
+	padding: 15px 5px;
+}
+.tabela {
+	background: white;
+	width: 478px;
+}
